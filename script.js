@@ -21,9 +21,11 @@ function getChange() {
   let cashReceived = parseInt(cashReceivedEntry.value);
 
   if (billAmount > cashReceived) {
+    table.style.display = "";
     message.innerText =
       "Cash is less than bill. Please enter the correct amounts.";
   } else if (billAmount === cashReceived) {
+    table.style.display = "";
     message.innerText = "No amount needs to be returned.";
   } else {
     message.innerText = "";
@@ -54,10 +56,12 @@ function enterClickHandler() {
     if (billAmountEntry.value > 0 && cashReceivedEntry.value > 0) {
       getChange();
     } else {
+      table.style.display = "";
       message.innerText =
         "Bill amount and cash received can not be zero or negative. Try again.";
     }
   } else {
+    table.style.display = "";
     message.innerText =
       "Bill amount and cash received can not be blank. Try again.";
   }
@@ -68,9 +72,11 @@ function nextClickHandler() {
     if (billAmountEntry.value > 0) {
       displayNextstep();
     } else {
+      table.style.display = "";
       message.innerText = "Bill amount can not be zero or negative. Try again.";
     }
   } else {
+    table.style.display = "";
     message.innerText = "Bill amount can not be blank. Try again.";
   }
 }
